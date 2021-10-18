@@ -20,6 +20,7 @@ I've seen some folks publishing their code for papers in Binder, so it might be 
 ### Interactive plotting?
 
 See Plotly examples
+- Jupyter book actually shows [example](https://jupyterbook.org/interactive/interactive.html) info for hosting interactive figures!
 - Use FigureWidget? -> see [example](https://plotly.com/python/figurewidget-app/)
 
 ### Binderizing/Jupyterbook
