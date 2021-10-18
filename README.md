@@ -24,3 +24,4 @@ See Plotly examples
 - Website for [JupyterBook](https://jupyterbook.org/intro.html)
 - [How to make your first JupyterBook](https://jupyterbook.org/start/overview.html)
 - Website for [Binder](https://mybinder.org/)
+- [Executable Book Project](https://executablebooks.org/en/latest/) - this is what supports Jupyter Book and Binder
