@@ -2,6 +2,8 @@
 
 ## Project Pitch
 
+[Google Slides Link](https://docs.google.com/presentation/d/1sRPDgFCIUhIjcCYBGer84pVo_-rfNCY0zqiiBznzKnU/edit#slide=id.p)
+
 ### From Keybase pitch:
 
 Effectively, we would create a Jupyter notebook (or a series of Jupyter notebooks) in Python, 
