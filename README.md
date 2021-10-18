@@ -14,3 +14,8 @@ This would allow for others to open the resource and run/modify the code in an o
 For an example, feel free to check out Introduction to Applied Bioinformatics ([Jupyter book](https://readiab.org/introduction.html) ; 
 [Binder](https://mybinder.org/v2/gh/applied-bioinformatics/iab2/main?urlpath=tree/book/introduction.md)). 
 I've seen some folks publishing their code for papers in Binder, so it might be a useful skill to learn for the sake of reproducibility! 
+
+### Interactive plotting?
+
+See Plotly examples
+- Use FigureWidget? -> see [example](https://plotly.com/python/figurewidget-app/)
