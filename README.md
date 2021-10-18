@@ -19,3 +19,8 @@ I've seen some folks publishing their code for papers in Binder, so it might be 
 
 See Plotly examples
 - Use FigureWidget? -> see [example](https://plotly.com/python/figurewidget-app/)
+
+### Binderizing/Jupyterbook
+- Website for [JupyterBook](https://jupyterbook.org/intro.html)
+- [How to make your first JupyterBook](https://jupyterbook.org/start/overview.html)
+- Website for [Binder](https://mybinder.org/)
