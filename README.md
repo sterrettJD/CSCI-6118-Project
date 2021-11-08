@@ -1,5 +1,14 @@
 # An Interactive Educational Resource for the Analysis of Microbial Community Ecology
 
+## Files contained
+- Notebooks/ contains Jupyter notebooks that will be used to build the book
+- index.html contains the first page for the book
+- utils.py contains utilities for interactive examples
+- environment.yml contains information for the conda environment (for Binder)
+- _toc.yml contains the table of contents for Jupyter book
+- _config.yml contains the configuration settings for Jupyter book
+
+
 ## Project Pitch
 
 [Google Slides Link](https://docs.google.com/presentation/d/1sRPDgFCIUhIjcCYBGer84pVo_-rfNCY0zqiiBznzKnU/edit#slide=id.p)
