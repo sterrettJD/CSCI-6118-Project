@@ -1,0 +1,8 @@
+format: jb-book
+
+root: index.html
+
+chapters:
+- file: Notebooks/Tools-for-analysis.ipynb
+- file: Notebooks/Alpha-diversity.ipynb
+- file: Notebooks/Beta-diversity.ipynb
