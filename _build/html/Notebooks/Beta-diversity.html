@@ -174,7 +174,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/sterrettJD/CSCI-6118-Project/try_make_book?urlpath=tree/Notebooks/Beta-diversity.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sterrettJD/CSCI-6118-Project/main?urlpath=tree/Notebooks/Beta-diversity.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -303,7 +303,7 @@
 <div class="section" id="what-is-beta-diversity">
 <h2>What is beta diversity?<a class="headerlink" href="#what-is-beta-diversity" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Beta diversity is a distance or dissimilarity between two samples based on their composition</p></li>
+<li><p>Beta diversity is a distance or dissimilarity between two samples. Just like we can calculate the (Euclidean) distance between two cities based on their latitude and longitude, we can calculate the distance between two microbial communities based on the composition. However, when investigating microbial communities, there are more dimensions than just latitude and longitude, so the math becomes a little more difficult, and having code to help us calculate the distances is helpful! This chapter will walk you through these steps.</p></li>
 </ul>
 </div>
 <div class="section" id="why-do-we-care-about-beta-diversity">
@@ -1018,17 +1018,17 @@ p = 0.001
  [ 1.  6.  1.  1.  4.  3.  6.  2.  5.  0.]] 
 
 Jaccard correlation coefficient = 0.18769283253745744, 
-p = 0.227
+p = 0.24
 
 Bray-Curtis correlation coefficient = 0.28011598595536796, 
-p = 0.07
+p = 0.08
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unweighted UniFrac correlation coefficient = 0.36828540678677346, 
-p = 0.019
+p = 0.021
 
 Weighted UniFrac correlation coefficient = 0.299360946507893, 
-p = 0.064
+p = 0.063
 </pre></div>
 </div>
 </div>
@@ -1078,29 +1078,29 @@ test statistic name        pseudo-F
 sample size                      10
 number of groups                  2
 test statistic             2.007408
-p-value                       0.091
+p-value                       0.096
 number of permutations          999
 Name: PERMANOVA results, dtype: object
 
  Bray-Curtis
+method name               PERMANOVA
+test statistic name        pseudo-F
+sample size                      10
+number of groups                  2
+test statistic             1.895251
+p-value                       0.098
+number of permutations          999
+Name: PERMANOVA results, dtype: object
+
+ Unweighted UniFrac
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>method name               PERMANOVA
 test statistic name        pseudo-F
 sample size                      10
 number of groups                  2
-test statistic             1.895251
-p-value                       0.106
-number of permutations          999
-Name: PERMANOVA results, dtype: object
-
- Unweighted UniFrac
-method name               PERMANOVA
-test statistic name        pseudo-F
-sample size                      10
-number of groups                  2
 test statistic             2.842222
-p-value                       0.017
+p-value                       0.011
 number of permutations          999
 Name: PERMANOVA results, dtype: object
 
@@ -1110,7 +1110,7 @@ test statistic name        pseudo-F
 sample size                      10
 number of groups                  2
 test statistic             1.622954
-p-value                       0.141
+p-value                        0.14
 number of permutations          999
 Name: PERMANOVA results, dtype: object
 </pre></div>

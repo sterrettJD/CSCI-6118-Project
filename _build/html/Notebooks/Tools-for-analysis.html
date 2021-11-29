@@ -173,7 +173,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/sterrettJD/CSCI-6118-Project/try_make_book?urlpath=tree/Notebooks/Tools-for-analysis.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sterrettJD/CSCI-6118-Project/main?urlpath=tree/Notebooks/Tools-for-analysis.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -453,27 +453,27 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[86 37 62]
- [33 78 44]
- [77 87 91]
- [83 66 78]
- [30 66 88]
- [25 23 71]
- [46 99 50]
- [11 96 13]
- [ 4 18 48]
- [76 86 25]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[75 23 37]
+ [11 88 92]
+ [11 86 52]
+ [77 24 68]
+ [73 71 97]
+ [24 28 92]
+ [58 17 53]
+ [89 80 92]
+ [70 47 33]
+ [13 93 54]] 
 
-[[480 205 365]
- [ 50 110 310]
- [ 30 285  75]
- [340 105 415]
- [260 315 185]
- [305 370  75]
- [280 110 285]
- [220 120 210]
- [310  10  20]
- [130  45 335]] 
+[[455 380 260]
+ [ 85 205 235]
+ [120 490 165]
+ [ 25 350 450]
+ [425 380 245]
+ [320 455 205]
+ [245 140 440]
+ [265  80 135]
+ [450 245 105]
+ [270 190  45]] 
 
 [[55 48 40]
  [93 58 58]
@@ -517,13 +517,13 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[764 977 224 262 718 341 575]
- [129  32 154 507 953 156 242]
- [461 638 960 813  46 796 480]
- [626 962 132 572 374 386 306]
- [ 66 669 302 542 797 558 472]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[763 471 153  44 895  22 532]
+ [549 532 822 787 992 214 367]
+ [833 340 648 152 515 851 953]
+ [ 49 803 301 450  65 156  12]
+ [839 897 390 690 386 535 537]] 
 
-[224, 262, 341, 129, 32, 154, 156, 242, 461, 46, 480, 132, 374, 386, 306, 66, 302, 472]
+[471, 153, 44, 22, 214, 367, 340, 152, 49, 301, 450, 65, 156, 12, 390, 386]
 </pre></div>
 </div>
 </div>
@@ -542,9 +542,9 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4]), array([2, 3, 5, 0, 1, 2, 5, 6, 0, 4, 6, 2, 4, 5, 6, 0, 2, 6])) 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4]), array([1, 2, 3, 5, 5, 6, 1, 3, 0, 2, 3, 4, 5, 6, 2, 4])) 
 
-[224 262 341 129  32 154 156 242 461  46 480 132 374 386 306  66 302 472] 
+[471 153  44  22 214 367 340 152  49 301 450  65 156  12 390 386] 
 </pre></div>
 </div>
 </div>
@@ -575,17 +575,17 @@ Let’s say that you still want to keep the datapoints only below a given thresh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[764 977 224 262 718 341 575]
- [129  32 154 507 953 156 242]
- [461 638 960 813  46 796 480]
- [626 962 132 572 374 386 306]
- [ 66 669 302 542 797 558 472]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[763 471 153  44 895  22 532]
+ [549 532 822 787 992 214 367]
+ [833 340 648 152 515 851 953]
+ [ 49 803 301 450  65 156  12]
+ [839 897 390 690 386 535 537]] 
 
-[[ nan  nan 224. 262.  nan 341.  nan]
- [129.  32. 154.  nan  nan 156. 242.]
- [461.  nan  nan  nan  46.  nan 480.]
- [ nan  nan 132.  nan 374. 386. 306.]
- [ 66.  nan 302.  nan  nan  nan 472.]]
+[[ nan 471. 153.  44.  nan  22.  nan]
+ [ nan  nan  nan  nan  nan 214. 367.]
+ [ nan 340.  nan 152.  nan  nan  nan]
+ [ 49.  nan 301. 450.  65. 156.  12.]
+ [ nan  nan 390.  nan 386.  nan  nan]]
 </pre></div>
 </div>
 </div>
