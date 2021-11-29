@@ -3,13 +3,13 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - brotlipy=0.7.0=py39h89e85a6_1001
-  - bzip2=1.0.8=h0d85af4_4
-  - c-ares=1.17.2=h0d85af4_0
-  - ca-certificates=2021.10.8=h033912b_0
-  - certifi=2021.10.8=py39h6e9494a_0
-  - cffi=1.14.6=py39he338e87_1
-  - chardet=4.0.0=py39h6e9494a_1
+  - brotlipy=0.7.0
+  - bzip2=1.0.8
+  - c-ares=1.17.2
+  - ca-certificates=2021.10.8
+  - certifi=2021.10.8
+  - cffi=1.14.6
+  - chardet=4.0.0
   - charset-normalizer=2.0.0=pyhd8ed1ab_0
   - colorama=0.4.4=pyh9f0ad1d_0
   - conda=4.10.3=py39h6e9494a_2
