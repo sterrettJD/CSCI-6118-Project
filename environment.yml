@@ -5,11 +5,9 @@ channels:
 dependencies:
   - charset-normalizer=2.0.0=pyhd8ed1ab_0
   - colorama=0.4.4=pyh9f0ad1d_0
-  - icu=68.1=h74dc148_0
   - pip=21.3=pyhd8ed1ab_0
   - pycparser=2.20=pyh9f0ad1d_2
   - pyopenssl=21.0.0=pyhd8ed1ab_0
-  - python_abi=3.9=2_cp39
   - requests=2.26.0=pyhd8ed1ab_0
   - six=1.16.0=pyh6c4a22f_0
   - tqdm=4.62.3=pyhd8ed1ab_0
