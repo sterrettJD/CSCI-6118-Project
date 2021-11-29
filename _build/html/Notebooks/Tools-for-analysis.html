@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools for Analysis &#8212; My Jupyter Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Alpha Diversity" href="Alpha-diversity.html" />
+    <link rel="prev" title="Interactive Microbial Ecology Exploration" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Interactive Microbial Ecology Exploration
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Tools for Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Alpha-diversity.html">
+   Alpha Diversity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Beta-diversity.html">
+   Beta Diversity
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Notebooks/Tools-for-analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sterrettJD/CSCI-6118-Project/try_make_book?urlpath=tree/Notebooks/Tools-for-analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-brief-introduction-to-python">
+   A Brief Introduction to Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#handling-data">
+   Handling Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy">
+     NumPy
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-numpy-on-your-computer">
+       Using NumPy on Your Computer
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-s-an-array">
+       What’s an Array?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-elements-in-an-array">
+       Accessing Elements in an Array
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas">
+     Pandas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sources">
+       Sources:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting">
+   Plotting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seaborn">
+     Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-analysis">
+   Statistical analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scipy">
+     SciPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scikit-bio">
+     Scikit-bio
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network-analysis">
+   Network analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#networkx">
+     Networkx
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="tools-for-analysis">
+<h1>Tools for Analysis<a class="headerlink" href="#tools-for-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-brief-introduction-to-python">
+<h2>A Brief Introduction to Python<a class="headerlink" href="#a-brief-introduction-to-python" title="Permalink to this headline">¶</a></h2>
+<p>This resource assumes Python is already installed, and
+that the user has some familiarity with Python basics such as:</p>
+<ul class="simple">
+<li><p>Variables</p>
+<ul>
+<li><p>Assigning variables</p></li>
+<li><p>Basic variable types (lists, dicts, strings, booleans, tuples)</p></li>
+</ul>
+</li>
+<li><p>Control flow</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">elif</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code> statements</p></li>
+</ul>
+</li>
+<li><p>Logical checks</p>
+<ul>
+<li><p>E.g. <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, etc</p></li>
+</ul>
+</li>
+<li><p>Functions</p>
+<ul>
+<li><p>Defining functions</p></li>
+<li><p>Calling functions</p></li>
+</ul>
+</li>
+<li><p>Methods and attributes</p>
+<ul>
+<li><p>Calling methods and attributes</p></li>
+<li><p>(We will likely not define any methods or attributes, but it will be good to understand how to use them)</p></li>
+</ul>
+</li>
+<li><p>Comments</p></li>
+</ul>
+<p>If you need more information regarding those, see these resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3schools.com/python/python_variables.asp">W3 Schools</a></p>
+<ul>
+<li><p>Work through Python modules</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="handling-data">
+<h2>Handling Data<a class="headerlink" href="#handling-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="numpy">
+<h3>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>NumPy (Numerical Python) is an open source Python library used in many areas of science and engineering.<br />
+It utilizes multidimensional array and matrix data structures, similarly to MATLAB. NumPy is an object-oriented<br />
+coding package that uses <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, and n-dimensional array object on which methods can operate.</p></li>
+</ul>
+<div class="section" id="using-numpy-on-your-computer">
+<h4>Using NumPy on Your Computer<a class="headerlink" href="#using-numpy-on-your-computer" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>NumPy must both be installed and imported.</p>
+<ul>
+<li><p>First, to install NumPy, open a Terminal window on your computer and type the following command: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code></p></li>
+<li><p>If you have Anaconda installed, you can install NumPy using the command: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy</span></code></p>
+<ul>
+<li><p>Note that Conda is the package manager for Anaconda whereas pip is the package manager for Python. You can use pip           if you do not have Anaconda installed.</p></li>
+</ul>
+</li>
+<li><p>Now that you have installed NumPy, you need to import it. To import this package, type the following command
+into your Terminal window: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>. The imported name is shortened to <code class="docutils literal notranslate"><span class="pre">np</span></code> as a convention and for
+better readability of code in NumPy.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="what-s-an-array">
+<h4>What’s an Array?<a class="headerlink" href="#what-s-an-array" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>An array is sort of like a list in Python, but its size is initialized ahead of time. This means that the array
+can only hold as many elements as its initial size - it cannot be appended like a list can. An array is a homogenous
+data structure (all of the elements in an array are of the same data type). Each element in an array is numbered
+consequetively, beginning with 0. An array can be multidimensional.</p></li>
+<li><p>One-dimensional array can be indexed, sliced, and interated over similarly to lists in Python. Here are some examples of     one-dimensional arrays and their functionality:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This array is manually initialized. It has a length of 7. Each element is filled with an int. </span>
+<span class="n">array_one</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_one</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># This array is initialized using a for loop. The loop begins with i as 0 and finishes with i as 5 </span>
+<span class="c1"># (i is the index in the array). Each index has a value of 3.</span>
+<span class="n">array_two</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_two</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># This array uses the object-oriented funtionality of NumPy by calling the empty() method. The empty()</span>
+<span class="c1"># method takes the length of the array and element type as inputs. In this case, it returns an empty array of </span>
+<span class="c1"># length 10 which can be filled with strings.</span>
+<span class="n">array_three</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_three</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># This array demonstrates the algebraic functionality of NumPy. It outputs an array of length 4 with</span>
+<span class="c1"># each element as the given string.</span>
+<span class="n">array_four</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hello World&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_four</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6, 7] 
+
+[3, 3, 3, 3, 3] 
+
+[&#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39;] 
+
+[&#39;Hello World&#39;, &#39;Hello World&#39;, &#39;Hello World&#39;, &#39;Hello World&#39;] 
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Here are some examples of you can initialize multi-dimensional arrays:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize an array of length 10 in dimension 1 and length 3 in dimension 2. </span>
+<span class="c1"># The array is filled with random integers in the range (0, 100).</span>
+<span class="n">multi_array_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multi_array_one</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Initialize another array of length 10 in dimension 1 and length 3 in dimension 2. </span>
+<span class="c1"># The array is filled with random integers in the range (0, 100) and each element is then</span>
+<span class="c1"># multiplied by 5.</span>
+<span class="n">multi_array_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multi_array_two</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Initialize yet another array of length 10 in dimension 1 and length 3 in dimension 2,</span>
+<span class="c1"># except this time each element is manually inputted.</span>
+<span class="n">multi_array_three</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">93</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">58</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">83</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="p">[</span><span class="mi">39</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">92</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">49</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">95</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">48</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">59</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">29</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">44</span><span class="p">],</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">85</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multi_array_three</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[86 37 62]
+ [33 78 44]
+ [77 87 91]
+ [83 66 78]
+ [30 66 88]
+ [25 23 71]
+ [46 99 50]
+ [11 96 13]
+ [ 4 18 48]
+ [76 86 25]] 
+
+[[480 205 365]
+ [ 50 110 310]
+ [ 30 285  75]
+ [340 105 415]
+ [260 315 185]
+ [305 370  75]
+ [280 110 285]
+ [220 120 210]
+ [310  10  20]
+ [130  45 335]] 
+
+[[55 48 40]
+ [93 58 58]
+ [83 57 49]
+ [39 49 34]
+ [92 74 20]
+ [49 37 95]
+ [48 30 27]
+ [60 27 59]
+ [29 10 44]
+ [73 93 85]] 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-elements-in-an-array">
+<h4>Accessing Elements in an Array<a class="headerlink" href="#accessing-elements-in-an-array" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Let’s say you have a large dataset and you want to extract data points below a certain value:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize a dataset, this time it&#39;s a random array of integers in the range (0, 1000).</span>
+<span class="c1"># The array has a suze of 7x5.</span>
+<span class="n">data_to_analyze</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_to_analyze</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set the value threshold. This is the maximum value you want to extract from your dataset.</span>
+<span class="n">value_threshold</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="c1"># Initialize an empty list which will eventually contain all datapoints you want to keep. </span>
+<span class="n">output_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Iterate through the dataset and append kept datapoints to the output list:</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data_to_analyze</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">element</span> <span class="o">&lt;</span> <span class="n">value_threshold</span><span class="p">:</span>
+            <span class="n">output_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[764 977 224 262 718 341 575]
+ [129  32 154 507 953 156 242]
+ [461 638 960 813  46 796 480]
+ [626 962 132 572 374 386 306]
+ [ 66 669 302 542 797 558 472]] 
+
+[224, 262, 341, 129, 32, 154, 156, 242, 461, 46, 480, 132, 374, 386, 306, 66, 302, 472]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>We can also use <code class="docutils literal notranslate"><span class="pre">np.where()</span></code> to give us the indices where some logical statement is true.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indices_to_keep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data_to_analyze</span> <span class="o">&lt;</span> <span class="n">value_threshold</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">indices_to_keep</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">output_data</span> <span class="o">=</span> <span class="n">data_to_analyze</span><span class="p">[</span><span class="n">indices_to_keep</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output_data</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4]), array([2, 3, 5, 0, 1, 2, 5, 6, 0, 4, 6, 2, 4, 5, 6, 0, 2, 6])) 
+
+[224 262 341 129  32 154 156 242 461  46 480 132 374 386 306  66 302 472] 
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Note that the above example simply creates a list of data that you want to keep derived from a larger dataset.
+Let’s say that you still want to keep the datapoints only below a given threshold, but you wish to retain the same size       dataset as the original:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data_to_analyze</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set the value threshold. This is the maximum value you want to extract from your dataset.</span>
+<span class="n">value_threshold</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="c1"># Initialize an empty array which will eventually contain all datapoints you want to keep. </span>
+<span class="n">output_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Iterate through the dataset and append kept datapoints to the output list:</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_to_analyze</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">element</span> <span class="o">&lt;</span> <span class="n">value_threshold</span><span class="p">:</span>
+            <span class="n">output_data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">element</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output_data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">output_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[764 977 224 262 718 341 575]
+ [129  32 154 507 953 156 242]
+ [461 638 960 813  46 796 480]
+ [626 962 132 572 374 386 306]
+ [ 66 669 302 542 797 558 472]] 
+
+[[ nan  nan 224. 262.  nan 341.  nan]
+ [129.  32. 154.  nan  nan 156. 242.]
+ [461.  nan  nan  nan  46.  nan 480.]
+ [ nan  nan 132.  nan 374. 386. 306.]
+ [ 66.  nan 302.  nan  nan  nan 472.]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pandas">
+<h3>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sources">
+<h4>Sources:<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html">NumPy: The Absolute Basics</a></p></li>
+<li><p><a class="reference external" href="https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-114.php">NumPy: Create Random Set of Rows From 2D Array</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="matplotlib">
+<h3>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="seaborn">
+<h3>Seaborn<a class="headerlink" href="#seaborn" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="statistical-analysis">
+<h2>Statistical analysis<a class="headerlink" href="#statistical-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scipy">
+<h3>SciPy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="scikit-bio">
+<h3>Scikit-bio<a class="headerlink" href="#scikit-bio" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="network-analysis">
+<h2>Network analysis<a class="headerlink" href="#network-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="networkx">
+<h3>Networkx<a class="headerlink" href="#networkx" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Interactive Microbial Ecology Exploration</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Alpha-diversity.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Alpha Diversity</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

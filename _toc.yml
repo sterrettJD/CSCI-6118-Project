@@ -1,6 +1,6 @@
 format: jb-book
 
-root: index.html
+root: index.rst
 
 chapters:
 - file: Notebooks/Tools-for-analysis.ipynb
