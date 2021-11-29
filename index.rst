@@ -7,4 +7,4 @@ It covers main concepts, such as alpha and beta diversity, differential abundanc
 
 Additionally, this resource provides code examples for handling the data, which may be useful for those new to Python or hoping to learn to use relevant packages, such as `SciPy`, `scikit-bio`, and `NetworkX`.
 
-To open each chapter in a manner that allows you to individually execute, modify, and run code blocks, click on the rocket figure at the top to open Binder.
+To open each chapter in a manner that allows you to individually execute, modify, and run code blocks, click on the rocket figure at the top to open Binder. It might take a minute for Binder to load, but don't worry! 
