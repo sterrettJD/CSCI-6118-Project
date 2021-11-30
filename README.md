@@ -1,5 +1,5 @@
 # An Interactive Educational Resource for the Analysis of Microbial Community Ecology
-[![Jupyter Book Badge](docs/images/badge.svg)](https://sterrettjd.github.io/CSCI-6118-Project/)
+[![Jupyter Book Badge](images/Jupyter_badge.svg)](https://jupyterbook.org)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sterrettJD/CSCI-6118-Project/main/)
 
 ## Files contained
