@@ -1,0 +1,1263 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beta Diversity &#8212; My Jupyter Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Alpha Diversity" href="Alpha-diversity.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Interactive Microbial Ecology Exploration
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tools-for-analysis.html">
+   Tools for Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Alpha-diversity.html">
+   Alpha Diversity
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Beta Diversity
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Notebooks/Beta-diversity.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sterrettJD/CSCI-6118-Project/main?urlpath=tree/Notebooks/Beta-diversity.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-beta-diversity">
+   What is beta diversity?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-do-we-care-about-beta-diversity">
+   Why do we care about beta diversity?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantifying-beta-diversity">
+   Quantifying beta diversity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beta-diversity-as-a-pairwise-metric">
+     Beta diversity as a pairwise metric
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantitative-vs-qualitative-beta-diversity-metrics">
+     Quantitative vs qualitative beta diversity metrics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-example">
+     A simple example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-more-complex-example">
+     A more complex example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unifrac">
+     UniFrac
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#an-example">
+       An example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stats-with-beta-diversity">
+   Stats with beta diversity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlations-between-distance-matrices">
+     Correlations between distance matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-difference-testing-with-beta-diversity">
+     Group difference testing with beta diversity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#different-results-with-different-distances">
+     Different results with different distances
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordinations">
+   Ordinations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-world-example">
+   Real world example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-example-homework">
+   Interactive example/homework
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="beta-diversity">
+<h1>Beta Diversity<a class="headerlink" href="#beta-diversity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-beta-diversity">
+<h2>What is beta diversity?<a class="headerlink" href="#what-is-beta-diversity" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Beta diversity is a distance or dissimilarity between two samples. Just like we can calculate the (Euclidean) distance between two cities based on their latitude and longitude, we can calculate the distance between two microbial communities based on the composition. However, when investigating microbial communities, there are more dimensions than just latitude and longitude, so the math becomes a little more difficult, and having code to help us calculate the distances is helpful! This chapter will walk you through these steps.</p></li>
+</ul>
+</div>
+<div class="section" id="why-do-we-care-about-beta-diversity">
+<h2>Why do we care about beta diversity?<a class="headerlink" href="#why-do-we-care-about-beta-diversity" title="Permalink to this headline">¶</a></h2>
+<p>Beta diversity gives us ways to quantify how similar or dissimilar two samples are. We can then extrapolate this to comparing microbial communities across metadata variables. For example, are gut microbiome samples generally more similar to other gut microbiome samples or to oral microbiome samples?</p>
+</div>
+<div class="section" id="quantifying-beta-diversity">
+<h2>Quantifying beta diversity<a class="headerlink" href="#quantifying-beta-diversity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="beta-diversity-as-a-pairwise-metric">
+<h3>Beta diversity as a pairwise metric<a class="headerlink" href="#beta-diversity-as-a-pairwise-metric" title="Permalink to this headline">¶</a></h3>
+<p>Beta diversity is a <strong>pairwise</strong> metric, meaning each value exists for comparing a pair of samples. Each value is the distance (or dissimilarity) between the two samples.</p>
+<p>For example, we can consider the pairwise distances between cities in the Colorado Front Range:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1613</span><span class="o">/</span><span class="mf">1943643728.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Boulder&quot;</span><span class="p">,</span> <span class="s2">&quot;Denver&quot;</span><span class="p">,</span> <span class="s2">&quot;Golden&quot;</span><span class="p">,</span> <span class="s2">&quot;Fort Collins&quot;</span><span class="p">,</span> <span class="s2">&quot;Colorado Springs&quot;</span><span class="p">]</span>
+
+<span class="c1"># distances are given in miles</span>
+<span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">85</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">63</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">67</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">39</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">119</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">distances_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span>
+                            <span class="n">columns</span><span class="o">=</span><span class="n">cities</span><span class="p">,</span>
+                            <span class="n">index</span><span class="o">=</span><span class="n">cities</span><span class="p">)</span>
+
+<span class="n">distances_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Boulder</th>
+      <th>Denver</th>
+      <th>Golden</th>
+      <th>Fort Collins</th>
+      <th>Colorado Springs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Boulder</th>
+      <td>0</td>
+      <td>24</td>
+      <td>18</td>
+      <td>39</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>Denver</th>
+      <td>24</td>
+      <td>0</td>
+      <td>13</td>
+      <td>56</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>Golden</th>
+      <td>18</td>
+      <td>13</td>
+      <td>0</td>
+      <td>56</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <th>Fort Collins</th>
+      <td>39</td>
+      <td>56</td>
+      <td>56</td>
+      <td>0</td>
+      <td>119</td>
+    </tr>
+    <tr>
+      <th>Colorado Springs</th>
+      <td>85</td>
+      <td>63</td>
+      <td>67</td>
+      <td>119</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In this case, because we have pairwise distances, we can’t ask “What’s the distance of Boulder?” Likewise, in a microbiome setting, we can’t ask “What’s the beta diversity of sample A?” Instead, we have to ask the question relative to another city/sample. For example, we can ask “What’s the distance from Boulder to Fort Collins?” or “What’s the the beta diversity between samples A and B?”</p>
+<p>We can view distance matrices as heatmaps for a nice visual. You can see below that the color of each square represents the distance between the two corresponding cities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">distances_df</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Beta-diversity_8_0.png" src="../_images/Beta-diversity_8_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="quantitative-vs-qualitative-beta-diversity-metrics">
+<h3>Quantitative vs qualitative beta diversity metrics<a class="headerlink" href="#quantitative-vs-qualitative-beta-diversity-metrics" title="Permalink to this headline">¶</a></h3>
+<p>Some beta diversity metrics look at what taxa are present, but others look at how much of each taxon is there. These are referred to as qualitative and quantitative metrics, respectively. Two common examples are Jaccard distance and Bray-Curtis distance.</p>
+<p><strong>Jaccard distance</strong> is typically used on presence-absence data, and it is the portion of detected taxa that are shared between samples. The equation to calculate Jaccard distance can be seen below, where <span class="math notranslate nohighlight">\(J(A,B)\)</span> is the number of taxa shared between the two samples divided by the total number of unique taxa in the two samples.
+$<span class="math notranslate nohighlight">\(J(A,B) = 1 - \frac{A \cap B}{A \cup B}\)</span>$</p>
+<ul class="simple">
+<li><p>Note: if all taxa are shared between the two samples, Jaccard distance will be 0, regardless of the number of taxa. This is why Jaccard is considered a qualitative metric.</p></li>
+</ul>
+<p><strong>Bray-Curtis distance</strong>, however takes taxa abundances into account. The equation to calculate Bray-Curtis distance can be seen below, where the Bray-Curtis distance between samples A and B is the sum of difference between taxon <span class="math notranslate nohighlight">\(i\)</span> in samples A and B divided by the total abundance of taxon <span class="math notranslate nohighlight">\(i\)</span> across both samples for all taxa present in the two samples.</p>
+<div class="math notranslate nohighlight">
+\[BC(A,B) = \sum_{i=1}^n \frac{|x_{A,i}-x_{B,i}|}{|x_{A,i}|+|x_{B,i}|}\]</div>
+<ul class="simple">
+<li><p>Q: What happens when there is no difference between the abundances of any taxa in samples A and B?</p>
+<ul>
+<li><p>A: The numerator of all terms is 0, meaning that the Bray-Curtis distance is 0!</p></li>
+</ul>
+</li>
+<li><p>Note: Even if all taxa are shared, if they have different abundances, Bray-Curtis distance will not be zero! This is why it can be considered a quantitative metric.</p></li>
+</ul>
+</div>
+<div class="section" id="a-simple-example">
+<h3>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h3>
+<p>Let’s consider an example where we’ve collected data on how many cats, fish, and bird that Will, Micaela, and Quinn have as pets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">pdist</span><span class="p">,</span> <span class="n">squareform</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">pet_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cats&quot;</span><span class="p">,</span> <span class="s2">&quot;fish&quot;</span><span class="p">,</span> <span class="s2">&quot;birds&quot;</span><span class="p">]</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Will&quot;</span><span class="p">,</span> <span class="s2">&quot;Micaela&quot;</span><span class="p">,</span> <span class="s2">&quot;Quinn&quot;</span><span class="p">]</span>
+
+<span class="n">pets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">],</span>
+                     <span class="n">columns</span><span class="o">=</span><span class="n">pet_types</span><span class="p">,</span>
+                     <span class="n">index</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+<span class="n">pets</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cats</th>
+      <th>fish</th>
+      <th>birds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Will</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Micaela</th>
+      <td>9</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Quinn</th>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Stop here to answer these questions!</strong></p>
+<ul class="simple">
+<li><p>Q: From looking at the data, what would you expect the Jaccard distance between Will and Micaela to be?</p></li>
+<li><p>What about the Jaccard distance from Will to Quinn?</p></li>
+<li><p>Will Jaccard(Will, Micaela) = BC(Will, Micaela) ?</p></li>
+</ul>
+<p>Let’s investigate:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_and_show_dist_mat</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">metric</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function makes a distance matrix and shows a heatmap of it.</span>
+<span class="sd">    </span>
+<span class="sd">Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : pd.DataFrame or NumPy array/matrix</span>
+<span class="sd">        The data to calculate the distance matrix from.</span>
+<span class="sd">    ids : list</span>
+<span class="sd">        The list of sample IDs</span>
+<span class="sd">    metric: str</span>
+<span class="sd">        The distance metric to be used when creating the distance matrix.</span>
+<span class="sd">        See https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.pdist.html</span>
+<span class="sd">        for list of compatible metrics</span>
+<span class="sd">    annot: Bool</span>
+<span class="sd">        Provide True if the distances should be written in the heatmap.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dist: pd.DataFrame</span>
+<span class="sd">        The generated distance matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">pdist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">metric</span><span class="p">))</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span>
+                        <span class="n">columns</span><span class="o">=</span><span class="n">ids</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">ids</span><span class="p">)</span>
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="n">annot</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metric</span><span class="si">}</span><span class="s2"> distance&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">dist</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">presence_absence_pets</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">jaccard</span> <span class="o">=</span> <span class="n">create_and_show_dist_mat</span><span class="p">(</span><span class="n">presence_absence_pets</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> 
+                                   <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;jaccard&quot;</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">bray_curt</span> <span class="o">=</span> <span class="n">create_and_show_dist_mat</span><span class="p">(</span><span class="n">pets</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> 
+                                     <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;braycurtis&quot;</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Beta-diversity_17_0.png" src="../_images/Beta-diversity_17_0.png" />
+<img alt="../_images/Beta-diversity_17_1.png" src="../_images/Beta-diversity_17_1.png" />
+</div>
+</div>
+<p><strong>Answers:</strong></p>
+<ul class="simple">
+<li><p>Jaccard distance from Will to Micaela is 0, since they share the same types of pets</p></li>
+<li><p>Jaccard distance from Will to Quinn is 1, since they share none of the same types of pets</p></li>
+<li><p>Jaccard(Will,Micaela) is not equal to BC(Will,Micaela)! This is because Jaccard only cares that they both have cats and birds, but Bray-Curtis is taking into account the fact that Micaela has 9 cats while Will only has 1.</p></li>
+</ul>
+</div>
+<div class="section" id="a-more-complex-example">
+<h3>A more complex example<a class="headerlink" href="#a-more-complex-example" title="Permalink to this headline">¶</a></h3>
+<p>For a more complex example, let’s imagine we look for common ingredients in 10 people’s shopping carts at the grocery store…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foods</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apples&quot;</span><span class="p">,</span> <span class="s2">&quot;bananas&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;broccoli&quot;</span><span class="p">,</span><span class="s2">&quot;spinach&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;chicken&quot;</span><span class="p">,</span> <span class="s2">&quot;beef&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;milk&quot;</span><span class="p">,</span> <span class="s2">&quot;orange juice&quot;</span><span class="p">,</span><span class="s2">&quot;apple juice&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;cookies&quot;</span>
+<span class="p">]</span>
+
+<span class="n">people</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Person </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)]</span>
+
+<span class="c1"># make some sparse data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="c1"># turn that data to integers from 1 to 10</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">data</span><span class="o">*</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># make a dataframe where rows are people</span>
+<span class="c1"># and columns are foods</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">A</span><span class="p">,</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="n">foods</span><span class="p">,</span>
+                    <span class="n">index</span><span class="o">=</span><span class="n">people</span><span class="p">)</span>
+
+<span class="c1">#convert to integers</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>apples</th>
+      <th>bananas</th>
+      <th>broccoli</th>
+      <th>spinach</th>
+      <th>chicken</th>
+      <th>beef</th>
+      <th>milk</th>
+      <th>orange juice</th>
+      <th>apple juice</th>
+      <th>cookies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Person 1</th>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
+      <td>9</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Person 2</th>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Person 3</th>
+      <td>0</td>
+      <td>8</td>
+      <td>9</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Person 4</th>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>7</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Person 5</th>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Person 6</th>
+      <td>9</td>
+      <td>4</td>
+      <td>1</td>
+      <td>9</td>
+      <td>6</td>
+      <td>2</td>
+      <td>7</td>
+      <td>0</td>
+      <td>6</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Person 7</th>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>4</td>
+      <td>0</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>Person 8</th>
+      <td>5</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Person 9</th>
+      <td>0</td>
+      <td>4</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Person 10</th>
+      <td>5</td>
+      <td>9</td>
+      <td>0</td>
+      <td>7</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">presence_absence_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">jaccard</span> <span class="o">=</span> <span class="n">create_and_show_dist_mat</span><span class="p">(</span><span class="n">presence_absence_data</span><span class="p">,</span> <span class="n">people</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;jaccard&quot;</span><span class="p">)</span>
+
+<span class="n">bray_curt</span> <span class="o">=</span> <span class="n">create_and_show_dist_mat</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">people</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;braycurtis&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Beta-diversity_22_0.png" src="../_images/Beta-diversity_22_0.png" />
+<img alt="../_images/Beta-diversity_22_1.png" src="../_images/Beta-diversity_22_1.png" />
+</div>
+</div>
+<p>These look pretty similar, but they aren’t exactly the same.</p>
+<p>For example, look at the color for the distance between individuals 1 and 5. Jaccard gives them a moderate distance (~0.5) because they share roughly half of the same items in their carts, but Bray-Curtis gives them a high distance (~0.9) because they have very different quantities of each item in their carts. Specifically, both have apples, but Person 1 has 1 whereas Person 5 has 6.</p>
+</div>
+<div class="section" id="unifrac">
+<h3>UniFrac<a class="headerlink" href="#unifrac" title="Permalink to this headline">¶</a></h3>
+<p>One issue with Bray-Curtis and Jaccard distances is that they don’t take phylogeny into account. For example, in our grocery cart study, if someone traded out a gala apple for a granny smith apple, Jaccard and Bray-Curtis would pick that up as the same difference as switching the gala apple for a spatula. There’s no context of how related two taxa are.</p>
+<p>Thinking about this in terms of bacteria, we know that <em>Bifidobacterium longum</em> is more similar to <em>Bifidobacterium brevis</em> than it is to <em>Escherichia coli</em>. Shouldn’t our distance metrics reflect this knowledge?</p>
+<p>This is why microbiome studies will often use UniFrac distances! UniFrac distances (including weighted and unweighted UniFrac) incorporate phylogeny by quantifying the length of shared branches in the phylogenetic tree between samples.</p>
+<p>Unweighted UniFrac, a qualitative metric (similar to Jacccard distance), is the sum of the shared branch length between two samples divided by the total branch length between the two samples. An equation for unweighted UniFrac can be seen below.</p>
+<div class="math notranslate nohighlight">
+\[Unweighted\ UniFrac = 1 - \frac{\sum shared\ branch\ lengths}{\sum total\ branch\ lengths}\]</div>
+<ul class="simple">
+<li><p><strong>Q:</strong> What happens as the shared branch lengths between two samples approaches the total branch lengths?</p></li>
+<li><p><strong>A:</strong> The second term approaches 1, and the distance approaches 0. With two identical samples, the value would be zero.</p></li>
+</ul>
+<p>On the other hand, weighted UniFrac is a quantative metric (similar to Bray-Curtis). Weighted UniFrac is similar to its unweighted counterpart, but it weights each shared branch according to the relative abundance of each taxon.</p>
+<div class="section" id="an-example">
+<h4>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h4>
+<p>Let’s investigate! First, we have to create a phylogenetic tree. Often you will use another program, such as FastTree or SATé-Enabled Phylogenetic Placement (SEPP) to do so, but we’ve created one for the food example by hand.</p>
+<p>The string seen in the code block below is a Newick formatted phylogenetic tree. You can see that around all branches at the same level, there are parentheses to group those branches. We can read this into a <code class="docutils literal notranslate"><span class="pre">skbio.TreeNode</span></code> object using <code class="docutils literal notranslate"><span class="pre">TreeNode.read()</span></code>. Typically, you will be reading a Newick formatted file, and you can just provide the filepath, but we have specified the string here, so it’s read using StringIO. We can view this <code class="docutils literal notranslate"><span class="pre">TreeNode</span></code> object in our notebook using <code class="docutils literal notranslate"><span class="pre">.ascii_art()</span></code>, but this might be unmanageable for larger trees, so we recommend using another program, such as <a class="reference external" href="https://itol.embl.de/">Interactive Tree of Life</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skbio</span> <span class="kn">import</span> <span class="n">TreeNode</span>
+<span class="kn">from</span> <span class="nn">skbio.diversity</span> <span class="kn">import</span> <span class="n">beta_diversity</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">food_tree_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;(((apples,bananas)fruit,(broccoli,spinach)vegetables)produce,</span>
+<span class="s2">                     (chicken,beef)meat,(milk,(orange_juice,apple_juice)juice)beverages,</span>
+<span class="s2">                     (cookies)sweets)items;&quot;&quot;&quot;</span>
+
+<span class="n">food_tree</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">food_tree_str</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">food_tree</span><span class="o">.</span><span class="n">ascii_art</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                              /-apples
+                    /fruit---|
+                   |          \-bananas
+          /produce-|
+         |         |          /-broccoli
+         |          \vegetables
+         |                    \-spinach
+         |
+         |          /-chicken
+         |-meat----|
+-items---|          \-beef
+         |
+         |          /-milk
+         |-beverages
+         |         |          /-orange juice
+         |          \juice---|
+         |                    \-apple juice
+         |
+          \sweets-- /-cookies
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code block below, we set each branch length equal to 1. In reality, each branch can be a different distance, but this keeps our example simple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">food_tree</span><span class="o">.</span><span class="n">postorder</span><span class="p">():</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below, we use scikit-bio to calculate the UniFrac distance matrices for our data. Note that unlike with Jaccard and Bray-Curtis, we now need to provide the phylogenetic tree.</p>
+<p>This returns objects of the scikit-bio’s <code class="docutils literal notranslate"><span class="pre">DistanceMatrix</span></code> class. This is different from when we calculated Jaccard and Bray-Curtis distance using SciPy’s <code class="docutils literal notranslate"><span class="pre">pdist</span></code> function, which returns an array that we turned into a square numpy array using the <code class="docutils literal notranslate"><span class="pre">squareform</span></code> function. If we just call the <code class="docutils literal notranslate"><span class="pre">DistanceMatrix</span></code> object by typing u_uni (such as in line 17 of the code below), it prints a heatmap of the distance matrix. However, if we want the data, we can call <code class="docutils literal notranslate"><span class="pre">DistanceMatrix.data</span></code> such as in line 16, which returns an array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_uni</span> <span class="o">=</span> <span class="n">beta_diversity</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;unweighted_unifrac&quot;</span><span class="p">,</span>
+                       <span class="n">counts</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                       <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                       <span class="n">tree</span><span class="o">=</span><span class="n">food_tree</span><span class="p">,</span>
+                       <span class="n">ids</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                       <span class="n">otu_ids</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="n">w_uni</span> <span class="o">=</span> <span class="n">beta_diversity</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;weighted_unifrac&quot;</span><span class="p">,</span>
+                       <span class="n">counts</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                       <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                       <span class="n">tree</span><span class="o">=</span><span class="n">food_tree</span><span class="p">,</span>
+                       <span class="n">ids</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                       <span class="n">otu_ids</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">u_uni</span><span class="p">))</span> <span class="c1"># should be DistanceMatrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">u_uni</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="c1"># should be a ndarray</span>
+<span class="n">u_uni</span> <span class="c1"># prints the heatmap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;skbio.stats.distance._base.DistanceMatrix&#39;&gt;
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Beta-diversity_31_1.svg" src="../_images/Beta-diversity_31_1.svg" /></div>
+</div>
+<p>Now, we can look at how Jaccard, Bray-Curtis, Unweighted UniFrac, and Weighted UniFrac compare.</p>
+<p>Do they generally match each other? Are there any distances that are particularly different when using different metrics? Can you deduce why based on the initial data and our phylogenetic tree?</p>
+<p>Additionally, note that the left column of plots is for qualitative distance metrics, whereas the right column is for quantitative metrics. Likewise, the top row is non-phylogenetic, whereas the bottom row is phylogenetic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Jaccard&quot;</span><span class="p">,</span> <span class="s2">&quot;Bray-Curtis&quot;</span><span class="p">],</span>
+                   <span class="p">[</span><span class="s2">&quot;Unweighted UniFrac&quot;</span><span class="p">,</span> <span class="s2">&quot;Weighted UniFrac&quot;</span><span class="p">]])</span>
+
+<span class="n">matrices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">jaccard</span><span class="p">,</span> <span class="n">bray_curt</span><span class="p">],</span>
+                    <span class="p">[</span><span class="n">u_uni</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">w_uni</span><span class="o">.</span><span class="n">data</span><span class="p">]])</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">matrices</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">],</span> 
+                    <span class="n">xticklabels</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span>
+                    <span class="n">yticklabels</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span>
+                    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Beta-diversity_33_0.png" src="../_images/Beta-diversity_33_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stats-with-beta-diversity">
+<h2>Stats with beta diversity<a class="headerlink" href="#stats-with-beta-diversity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="correlations-between-distance-matrices">
+<h3>Correlations between distance matrices<a class="headerlink" href="#correlations-between-distance-matrices" title="Permalink to this headline">¶</a></h3>
+<p>How could we quantify how well these distance matrices using different metrics match each other?</p>
+<p>One way would be to look at the correlation between the values across the matrices. This is called a mantel test! We can perform a mantel test using Pearson or Spearman (non-parametric) correlations.</p>
+<p>Often, researchers use a mantel test to see how well beta diversity correlates with some metadata variable, which informs us of the strength of the relationship between microbiome composition and that variable. An example could be looking at the correlation between microbial community composition and pH of the sampling environment.</p>
+<p>Note: There are popular implementations of the mantel test in both Python (via scikit-bio) and R (via the vegan package). The mantel test</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skbio.stats.distance</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span><span class="p">,</span> <span class="n">mantel</span><span class="p">,</span> <span class="n">permanova</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">mantel</span><span class="p">(</span><span class="n">jaccard</span><span class="p">,</span> <span class="n">bray_curt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Correlation coefficient = </span><span class="si">{</span><span class="n">corr</span><span class="si">}</span><span class="s2">, </span><span class="se">\n</span><span class="s2">p = </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation coefficient = 0.7817190130125696, 
+p = 0.001
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imagine that we also had the participants in our study give us a score for how much they like meat on a scale from 1 to 10. We could then run a mantel test to see how well that score correlates with beta diversity. Note that we need to create a distance matrix to pass to mantel - we can’t run <code class="docutils literal notranslate"><span class="pre">mantel(DistanceMatrix,</span> <span class="pre">list)</span></code> because Mantel requires 2 distance matrices! (Feel free to verify this yourself)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create our data</span>
+<span class="n">like_meat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Create a distance matrix for our metadata</span>
+<span class="c1"># Each entry [i,j] in the matrix corresponds to </span>
+<span class="c1"># The difference between like_meat for sample i and like_meat for sample j</span>
+<span class="c1"># We&#39;re effectively taking the Euclidean distance here, but since there are</span>
+<span class="c1"># only 2 values, we can just take the absolute value of a-b.</span>
+<span class="n">meat_distmat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num_1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">like_meat</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">num_2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">like_meat</span><span class="p">):</span>
+        <span class="n">meat_distmat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">num_1</span><span class="o">-</span><span class="n">num_2</span><span class="p">)</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Our distance matrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">meat_distmat</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert it to type DistanceMatrix</span>
+<span class="n">meat_distmat</span> <span class="o">=</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="n">meat_distmat</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="n">people</span><span class="p">)</span>
+
+<span class="n">dists_and_mats</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Jaccard&quot;</span><span class="p">,</span> <span class="n">jaccard</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s2">&quot;Bray-Curtis&quot;</span><span class="p">,</span> <span class="n">bray_curt</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s2">&quot;Unweighted UniFrac&quot;</span><span class="p">,</span> <span class="n">u_uni</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s2">&quot;Weighted UniFrac&quot;</span><span class="p">,</span> <span class="n">w_uni</span><span class="p">)]</span>
+
+<span class="c1"># Run mantel on each distance</span>
+<span class="k">for</span> <span class="n">dist</span><span class="p">,</span> <span class="n">matrix</span> <span class="ow">in</span> <span class="n">dists_and_mats</span><span class="p">:</span>
+    <span class="n">corr</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">mantel</span><span class="p">(</span><span class="n">DistanceMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="n">people</span><span class="p">),</span> 
+                        <span class="n">meat_distmat</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dist</span><span class="si">}</span><span class="s2"> correlation coefficient = </span><span class="si">{</span><span class="n">corr</span><span class="si">}</span><span class="s2">, </span><span class="se">\n</span><span class="s2">p = </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our distance matrix:
+ [[ 0.  5.  2.  2.  5.  4.  5.  1.  4.  1.]
+ [ 5.  0.  7.  7. 10.  9.  0.  4.  1.  6.]
+ [ 2.  7.  0.  0.  3.  2.  7.  3.  6.  1.]
+ [ 2.  7.  0.  0.  3.  2.  7.  3.  6.  1.]
+ [ 5. 10.  3.  3.  0.  1. 10.  6.  9.  4.]
+ [ 4.  9.  2.  2.  1.  0.  9.  5.  8.  3.]
+ [ 5.  0.  7.  7. 10.  9.  0.  4.  1.  6.]
+ [ 1.  4.  3.  3.  6.  5.  4.  0.  3.  2.]
+ [ 4.  1.  6.  6.  9.  8.  1.  3.  0.  5.]
+ [ 1.  6.  1.  1.  4.  3.  6.  2.  5.  0.]] 
+
+Jaccard correlation coefficient = 0.18769283253745744, 
+p = 0.259
+
+Bray-Curtis correlation coefficient = 0.28011598595536796, 
+p = 0.084
+
+Unweighted UniFrac correlation coefficient = 0.36828540678677346, 
+p = 0.024
+
+Weighted UniFrac correlation coefficient = 0.299360946507893, 
+p = 0.055
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="group-difference-testing-with-beta-diversity">
+<h3>Group difference testing with beta diversity<a class="headerlink" href="#group-difference-testing-with-beta-diversity" title="Permalink to this headline">¶</a></h3>
+<p>Similarly, imagine that we also collected data on vegetarianism in our sample population. What if we wanted to test for an association of this categorical variable with microbiome composition?</p>
+<p>We could use a permutational analysis of variance (PERMANOVA), which is a non-parametric version of the ANOVA test that is well-suited for distance matrices. Whereas an ANOVA calculates a p value through the assumption of normality, the PERMANOVA permutes the datapoints and compares the pseduo-F statistic of the actual data to the pseduo-F values that occur with random permutations of the data.</p>
+<p>With a PERMANOVA, our metadata should be formatted like a list or a column in a dataframe. We don’t need to create a distance matrix in this case, which contrasts the mantel test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use a pd.Series so we can see how the data match up with the index</span>
+<span class="n">vegetarian</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>
+              <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+
+<span class="n">vegetarian</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">vegetarian</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">people</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">vegetarian</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">dist</span><span class="p">,</span> <span class="n">matrix</span> <span class="ow">in</span> <span class="n">dists_and_mats</span><span class="p">:</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">permanova</span><span class="p">(</span><span class="n">DistanceMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="n">people</span><span class="p">),</span> 
+          <span class="n">vegetarian</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Person 1     False
+Person 2      True
+Person 3     False
+Person 4     False
+Person 5     False
+Person 6     False
+Person 7      True
+Person 8     False
+Person 9      True
+Person 10    False
+dtype: bool
+
+ Jaccard
+method name               PERMANOVA
+test statistic name        pseudo-F
+sample size                      10
+number of groups                  2
+test statistic             2.007408
+p-value                       0.097
+number of permutations          999
+Name: PERMANOVA results, dtype: object
+
+ Bray-Curtis
+method name               PERMANOVA
+test statistic name        pseudo-F
+sample size                      10
+number of groups                  2
+test statistic             1.895251
+p-value                       0.102
+number of permutations          999
+Name: PERMANOVA results, dtype: object
+
+ Unweighted UniFrac
+method name               PERMANOVA
+test statistic name        pseudo-F
+sample size                      10
+number of groups                  2
+test statistic             2.842222
+p-value                       0.025
+number of permutations          999
+Name: PERMANOVA results, dtype: object
+
+ Weighted UniFrac
+method name               PERMANOVA
+test statistic name        pseudo-F
+sample size                      10
+number of groups                  2
+test statistic             1.622954
+p-value                       0.138
+number of permutations          999
+Name: PERMANOVA results, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="different-results-with-different-distances">
+<h3>Different results with different distances<a class="headerlink" href="#different-results-with-different-distances" title="Permalink to this headline">¶</a></h3>
+<p>There will almost always be different statistical results when using different distance metrics. This does not mean that one distance is better or more accurate than the others. It just means that they tell you different things. When planning an experiment, one should identify the distance metrics that will be used before statistical testing occurs, and all results should be reported. In the case of our vegetarianism example, only unweighted UniFrac had significant results, but that doesn’t mean that Jaccard, Bray-Curtis, and Weighted UniFrac results should not be reported.</p>
+</div>
+</div>
+<div class="section" id="ordinations">
+<h2>Ordinations<a class="headerlink" href="#ordinations" title="Permalink to this headline">¶</a></h2>
+<p>It’s often useful to visualize our samples’ composition. However, it can be difficult to visualize the whole dataset at once. For example, condsider our gorcery store example - even a simple dataset like that has 10 dimensions! We could maybe get creative with showing multiple 3D scatterplots, but when we scale up to microbiome datasets with hundreds to thousands of taxa, that becomes unmanageable.</p>
+<p>Luckily, dimension reduction techniques exist! Other fields (including classical ecology) often use a technique called Principal Components Analysis (PCA). This allows us to scale a large dataset into just a few important dimensions (or principal components). For our math-inclined readers, these principal components are the eigenvectors of the covariance marix.</p>
+<p>Though PCA preserves Euclidean distances well, microbiome data are compositional, and <a class="reference external" href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1982.tb01195.x">compositional data do not exist in Euclidean space</a>. Thus, we need some dimensionality reduction technique that works with non-Euclidean distances, such as Jaccard, Bray-Curtis, and UniFrac distances.</p>
+<p>For non-Euclidean distances, we can use a similar technique called Principal <strong>Coordinates</strong> Analysis (PCoA; components -&gt; coordinates, C -&gt; Co). There are functions to implement PCoA in Python through scikit-bio and R through the vegan package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skbio.stats.ordination</span> <span class="kn">import</span> <span class="n">pcoa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_uni_pcoa</span> <span class="o">=</span> <span class="n">pcoa</span><span class="p">(</span><span class="n">u_uni</span><span class="p">,</span> <span class="n">number_of_dimensions</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">u_uni_coords</span> <span class="o">=</span> <span class="n">u_uni_pcoa</span><span class="o">.</span><span class="n">samples</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/Int_MEX/lib/python3.9/site-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:143: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it&#39;s probably safe to ignore them, but if they are large in magnitude, the results won&#39;t be useful. See the Notes section for more details. The smallest eigenvalue is -0.03304581294149358 and the largest is 0.44030598149431005.
+  warn(
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;PC1&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;PC2&quot;</span><span class="p">,</span> 
+                     <span class="n">hue</span><span class="o">=</span><span class="n">u_uni_coords</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> 
+                     <span class="n">data</span><span class="o">=</span><span class="n">u_uni_coords</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Beta-diversity_49_0.png" src="../_images/Beta-diversity_49_0.png" />
+</div>
+</div>
+<p>We can color this ordination according to metadata variables, such as our score for how much each individual likes meat. In this case, we can see that individuals who reported not liking meat tended to be toward the left side of the plot, whereas individuals who reported liking meat tended to be toward the right side of the plot. Through this, we can visualize the results of our mantel test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;PC1&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;PC2&quot;</span><span class="p">,</span> 
+                     <span class="n">hue</span><span class="o">=</span><span class="n">like_meat</span><span class="p">,</span> 
+                     <span class="n">data</span><span class="o">=</span><span class="n">u_uni_coords</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+          <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&#39;Likes meat&#39; score&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Beta-diversity_51_0.png" src="../_images/Beta-diversity_51_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="real-world-example">
+<h2>Real world example<a class="headerlink" href="#real-world-example" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="interactive-example-homework">
+<h2>Interactive example/homework<a class="headerlink" href="#interactive-example-homework" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Alpha-diversity.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Alpha Diversity</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
