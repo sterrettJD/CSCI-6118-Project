@@ -6,7 +6,7 @@ only_build_toc_files: true
 
 repository:
   url                       : https://github.com/sterrettJD/CSCI-6118-Project  # Online location of your book
-#  path_to_book              : /Notebooks/  # Optional path to your book, relative to the repository root
+#  path_to_book              : /Notebooks/  # Commented out because it's assumed to be in a Notebooks directory
   branch                    : main  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
