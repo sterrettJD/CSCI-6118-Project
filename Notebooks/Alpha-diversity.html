@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -197,49 +195,30 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Alpha Diversity
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-alpha-diversity">
+   What is alpha diversity?
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-alpha-diversity">
-     What is alpha diversity?
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#big-headers">
-   Big headers
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-do-we-care-about-alpha-diversity">
+   Why do we care about alpha diversity?
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#medium-header">
-     Medium header
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-do-we-care-about-alpha-diversity">
-     Why do we care about alpha diversity?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-do-we-quantify-alpha-diversity">
-     How do we quantify alpha diversity?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#richness-vs-evenness">
-     Richness vs evenness
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interactive-example-homework">
-     Interactive example/Homework
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-we-quantify-alpha-diversity">
+   How do we quantify alpha diversity?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#richness-vs-evenness">
+   Richness vs evenness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-example-homework">
+   Interactive example/Homework
+  </a>
  </li>
 </ul>
 
@@ -256,39 +235,6 @@
 <h1>Alpha Diversity<a class="headerlink" href="#alpha-diversity" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-alpha-diversity">
 <h2>What is alpha diversity?<a class="headerlink" href="#what-is-alpha-diversity" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_nums</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">add_nums</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="big-headers">
-<h1>Big headers<a class="headerlink" href="#big-headers" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>list 1</p></li>
-<li><p>list 2</p></li>
-</ul>
-<div class="section" id="medium-header">
-<h2>Medium header<a class="headerlink" href="#medium-header" title="Permalink to this headline">¶</a></h2>
-<p><span class="math notranslate nohighlight">\(\alpha\)</span></p>
 </div>
 <div class="section" id="why-do-we-care-about-alpha-diversity">
 <h2>Why do we care about alpha diversity?<a class="headerlink" href="#why-do-we-care-about-alpha-diversity" title="Permalink to this headline">¶</a></h2>

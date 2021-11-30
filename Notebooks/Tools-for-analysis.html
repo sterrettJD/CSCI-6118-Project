@@ -391,7 +391,7 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1782</span><span class="o">/</span><span class="mf">3593848235.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1651</span><span class="o">/</span><span class="mf">3593848235.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
@@ -463,27 +463,27 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[29 19 98]
- [63 85 86]
- [96 45 70]
- [81 73 61]
- [ 4  1 82]
- [84 47 20]
- [90 54 77]
- [99 60 76]
- [27 35 51]
- [66 11  8]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[43 70 84]
+ [16 19 61]
+ [22 34 40]
+ [35 81 37]
+ [60 17  5]
+ [ 0 93 49]
+ [73 15 53]
+ [47 12 85]
+ [93 67 96]
+ [23 95  0]] 
 
-[[435 370 150]
- [430 175 255]
- [130 455 135]
- [145 320 110]
- [435 280 285]
- [280 380 390]
- [105  40 260]
- [445 220 305]
- [430 430 220]
- [115 255  60]] 
+[[365 175  75]
+ [485 475 470]
+ [375   0 170]
+ [220 155 465]
+ [ 80 260 320]
+ [435 430  30]
+ [350  55 145]
+ [395  50 450]
+ [110 165 145]
+ [110 330 275]] 
 
 [[55 48 40]
  [93 58 58]
@@ -527,13 +527,13 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[397 311  63 976 512 147 228]
- [880 626 225 802 697 750 386]
- [  5 574 647 957 897 354 964]
- [641 715 855 926 553 796 497]
- [284 925 210 181 457 372 184]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[892 857 509 818 873  20 324]
+ [936 248 265 542 114 819 452]
+ [926 500 489 284 614 421 305]
+ [ 79 866 182 784 647 155 976]
+ [297 796 189 448 647 264 463]] 
 
-[397, 311, 63, 147, 228, 225, 386, 5, 354, 497, 284, 210, 181, 457, 372, 184]
+[20, 324, 248, 265, 114, 452, 489, 284, 421, 305, 79, 182, 155, 297, 189, 448, 264, 463]
 </pre></div>
 </div>
 </div>
@@ -552,9 +552,9 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 4, 4, 4, 4, 4, 4]), array([0, 1, 2, 5, 6, 2, 6, 0, 5, 6, 0, 2, 3, 4, 5, 6])) 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4]), array([5, 6, 1, 2, 4, 6, 2, 3, 5, 6, 0, 2, 5, 0, 2, 3, 5, 6])) 
 
-[397 311  63 147 228 225 386   5 354 497 284 210 181 457 372 184] 
+[ 20 324 248 265 114 452 489 284 421 305  79 182 155 297 189 448 264 463] 
 </pre></div>
 </div>
 </div>
@@ -585,17 +585,17 @@ Let’s say that you still want to keep the datapoints only below a given thresh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[397 311  63 976 512 147 228]
- [880 626 225 802 697 750 386]
- [  5 574 647 957 897 354 964]
- [641 715 855 926 553 796 497]
- [284 925 210 181 457 372 184]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[892 857 509 818 873  20 324]
+ [936 248 265 542 114 819 452]
+ [926 500 489 284 614 421 305]
+ [ 79 866 182 784 647 155 976]
+ [297 796 189 448 647 264 463]] 
 
-[[397. 311.  63.  nan  nan 147. 228.]
- [ nan  nan 225.  nan  nan  nan 386.]
- [  5.  nan  nan  nan  nan 354.  nan]
- [ nan  nan  nan  nan  nan  nan 497.]
- [284.  nan 210. 181. 457. 372. 184.]]
+[[ nan  nan  nan  nan  nan  20. 324.]
+ [ nan 248. 265.  nan 114.  nan 452.]
+ [ nan  nan 489. 284.  nan 421. 305.]
+ [ 79.  nan 182.  nan  nan 155.  nan]
+ [297.  nan 189. 448.  nan 264. 463.]]
 </pre></div>
 </div>
 </div>
