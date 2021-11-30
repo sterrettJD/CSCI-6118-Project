@@ -21,7 +21,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        $CONDA/bin/conda env update --file .github/github_environment.yml --name base
+        pip install -r .github/requirements.txt
 
     # Build the book
     - name: Build the book
