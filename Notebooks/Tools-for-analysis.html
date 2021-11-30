@@ -391,7 +391,7 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1627</span><span class="o">/</span><span class="mf">3593848235.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1599</span><span class="o">/</span><span class="mf">3593848235.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
@@ -402,12 +402,12 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This array is manually initialized. It has a length of 7. Each element is filled with an int. </span>
-<span class="n">array_one</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">array_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">array_one</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># This array is initialized using a for loop. The loop begins with i as 0 and finishes with i as 5 </span>
 <span class="c1"># (i is the index in the array). Each index has a value of 3.</span>
-<span class="n">array_two</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="n">array_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">array_two</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># This array uses the object-oriented funtionality of NumPy by calling the empty() method. The empty()</span>
@@ -418,7 +418,7 @@ consequetively, beginning with 0. An array can be multidimensional.</p></li>
 
 <span class="c1"># This array demonstrates the algebraic functionality of NumPy. It outputs an array of length 4 with</span>
 <span class="c1"># each element as the given string.</span>
-<span class="n">array_four</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hello World&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">array_four</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="s1">&#39;Hello World&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">array_four</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
