@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -208,8 +210,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-care-about-alpha-diversity-todo">
-   Why do we care about alpha diversity? (TODO)
+  <a class="reference internal nav-link" href="#why-do-we-care-about-alpha-diversity">
+   Why do we care about alpha diversity?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -222,17 +224,34 @@
      Resilience
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#todo-resistance-resilience-simluation">
+     TODO: resistance/resilience simluation?
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-do-we-quantify-alpha-diversity">
    How do we quantify alpha diversity?
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#richness-vs-evenness">
-   Richness vs evenness
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observed-features">
+     Observed features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shannon-s-diversity-index">
+     Shannon’s diversity index
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#faith-s-phylogenetic-diversity">
+     Faith’s phylogenetic diversity
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interactive-example-homework">
@@ -265,15 +284,17 @@
 <p>If this isn’t super clear yet, don’t worry! There will be more examples as we work through this chapter.</p>
 </div>
 </div>
-<div class="section" id="why-do-we-care-about-alpha-diversity-todo">
-<h2>Why do we care about alpha diversity? (TODO)<a class="headerlink" href="#why-do-we-care-about-alpha-diversity-todo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-do-we-care-about-alpha-diversity">
+<h2>Why do we care about alpha diversity?<a class="headerlink" href="#why-do-we-care-about-alpha-diversity" title="Permalink to this headline">¶</a></h2>
 <p>When thinking about the health of a microbial community, it’s important to consider factors that encourage stability, as a stable community is one that is not as susceptible to large perturbations by invading species or a lack of nutrients.</p>
 <p><a class="reference external" href="https://www.nature.com/articles/ismej200988">Konopka</a> outlines the importance of high alpha diversity for community stability, notably that high diversity encourages community resistance and resilience.</p>
 <div class="section" id="resistance">
 <h3>Resistance<a class="headerlink" href="#resistance" title="Permalink to this headline">¶</a></h3>
+<p>Resistance is how little a community changes in response to some stress. For example, if you push on the side of a massive boulder, it is resistant to moving. However, if you push a tennis ball, it rolls away and is not resistant to moving.</p>
 </div>
 <div class="section" id="resilience">
 <h3>Resilience<a class="headerlink" href="#resilience" title="Permalink to this headline">¶</a></h3>
+<p>Resilience is how able a community that has been perturbed can return to its previous (theoretically homeostatic) state. Resilience depends on how well the community can keep performing the functions that it needs after the perturbation, which is reliant on functional diversity and functional redundancy.</p>
 <ul class="simple">
 <li><p><strong>Functional diversity</strong></p>
 <ul>
@@ -285,17 +306,412 @@
 <ul>
 <li><p>Functional redundancy is how well a community can keep performing a function if one individual or species that performs it is removed.</p></li>
 <li><p>High richness and evenness are associated with functional redundancy.</p></li>
-<li></li>
 </ul>
 </li>
 </ul>
+<p>For an example of community resilience, let’s consider that you live on a theoretical commune. If you only have one way of procuring food (picking berries), what happens if the berries stop growing? There’s no way to get food anymore! It would be a better idea to also grow some beans and wheat, or to hunt as well. A commune that has multiple methods of getting food has higher functional diversity than a commune with just one method of food procurement, and that commune is thus more resilient to drought or other challenges in getting food.</p>
+<p>Additionally, consider that your commune only has one person who knows how to make medicine. What happens when that person gets whisked away while swimming in the river? It would make a lot more sense to have another person who can step in to make the medicine. This is an example of functional redundancy. If multiple people/species can perform the same function, you don’t have to worry as much about losing one individual/species, as the community can keep working like before.</p>
+</div>
+<div class="section" id="todo-resistance-resilience-simluation">
+<h3>TODO: resistance/resilience simluation?<a class="headerlink" href="#todo-resistance-resilience-simluation" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="how-do-we-quantify-alpha-diversity">
 <h2>How do we quantify alpha diversity?<a class="headerlink" href="#how-do-we-quantify-alpha-diversity" title="Permalink to this headline">¶</a></h2>
+<p>There are multiple metrics for quantifying alpha diversity. Common metrics include:</p>
+<ul class="simple">
+<li><p>Observed features</p></li>
+<li><p>Shannon’s diversity index</p></li>
+<li><p>Chao1 diversity</p></li>
+<li><p>Faith’s phylogenetic diversity</p></li>
+<li><p>Pielou’s evenness</p></li>
+</ul>
+<p>These metrics can be divided into quantitative vs qualitative, phylogenetic vs non-phylogenetic, and richness vs evenness.</p>
+<p><strong>Classifications:</strong> Qualitative metrics are only concerned with whether a taxon is present or absent, but quantitative metrics take the abundances of each taxon into account. The distinction between phylogenetic vs non-phylogenetic metrics is based on whether they utilize a phylogenetic tree.</p>
+<div class="section" id="observed-features">
+<h3>Observed features<a class="headerlink" href="#observed-features" title="Permalink to this headline">¶</a></h3>
+<p>To start, observed features (also called observed operational taxonomic units, or observed OTUs) is the simplest way of calculating richness. Each taxon that we observe in a sample is the number of observed OTUs. We can calculate observed features as such:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
 </div>
-<div class="section" id="richness-vs-evenness">
-<h2>Richness vs evenness<a class="headerlink" href="#richness-vs-evenness" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1687</span><span class="o">/</span><span class="mf">2080034654.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_observed_features</span><span class="p">(</span><span class="n">populations</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function returns the observed features for a sample.</span>
+<span class="sd">    The input should be a list, ndarray, or pd.Series.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># make it a list to be sure</span>
+    <span class="n">populations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">populations</span><span class="p">)</span>
+    
+    <span class="c1"># initialize our observed features variable as 0</span>
+    <span class="n">observed_features</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># for each taxon, if it&#39;s greater than 1, add 1 to observed features</span>
+    <span class="k">for</span> <span class="n">tax</span> <span class="ow">in</span> <span class="n">populations</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">tax</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">observed_features</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+    <span class="k">return</span> <span class="n">observed_features</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">populations</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cats&quot;</span><span class="p">,</span> <span class="s2">&quot;foxes&quot;</span><span class="p">,</span> <span class="s2">&quot;whales&quot;</span><span class="p">,</span> <span class="s2">&quot;frogs&quot;</span><span class="p">,</span> <span class="s2">&quot;sharks&quot;</span><span class="p">,</span><span class="s2">&quot;dogs&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">observed_features</span> <span class="o">=</span> <span class="n">calc_observed_features</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Observed features: </span><span class="si">{</span><span class="n">observed_features</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cats      12
+foxes      2
+whales     0
+frogs     52
+sharks     0
+dogs       7
+dtype: int64 
+
+Observed features: 4
+</pre></div>
+</div>
+</div>
+</div>
+<p>As could be expected, the value for observed features will grow linearly with the number of taxa present.</p>
+<p>Because it does not depend on how many of each taxon are present, and because it does not depend on phylogeny, observed features is a qualitative, non-phylogenetic measure of richness.</p>
+<p>Additionally, it can be calculated using scikit-bio’s implementation (you don’t have to write your own function).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skbio.diversity.alpha</span> <span class="kn">import</span> <span class="n">observed_otus</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scikit-bio: </span><span class="si">{</span><span class="n">observed_otus</span><span class="p">(</span><span class="n">populations</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Our function: </span><span class="si">{</span><span class="n">observed_features</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scikit-bio: 4
+Our function: 4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="shannon-s-diversity-index">
+<h3>Shannon’s diversity index<a class="headerlink" href="#shannon-s-diversity-index" title="Permalink to this headline">¶</a></h3>
+<p>Shannon’s diversity index is calculated by summing the relative abundance of a certain taxa (<span class="math notranslate nohighlight">\(p_i\)</span>) times the natural log of its relative abundance, and can be written as such:</p>
+<div class="math notranslate nohighlight">
+\[H = -\sum p_i \ln p_i\]</div>
+<p>Consider a community that contains only one species. In this case, p_i would equal 1, and
+$<span class="math notranslate nohighlight">\( H = -1 \times ln(1) = -1 \times 0 = 0 \)</span>$</p>
+<p>What happens if we add more species? Let’s investigate with code!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_shannon</span><span class="p">(</span><span class="n">populations</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    When given a ndarray of population counts for a sample, </span>
+<span class="sd">    this function returns the shannon diversity index of that sample.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># divide each element of the populations array by the sum</span>
+    <span class="c1"># this converts it to relative abundances</span>
+    <span class="n">populations</span> <span class="o">/=</span> <span class="n">populations</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="c1"># create a shannon_diversity variable</span>
+    <span class="n">shannon_diversity</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># take the sum of p_i * ln(p_i) for all counts</span>
+    <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">populations</span><span class="p">:</span>
+        <span class="n">shannon_diversity</span> <span class="o">+=</span> <span class="p">(</span> <span class="n">count</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="p">)</span>
+    
+    <span class="c1"># make it negative</span>
+    <span class="n">shannon_diversity</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">shannon_diversity</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize an empty list</span>
+<span class="n">shannon_values</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># from 0 to 50, make an array of ones with a length = i</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">populations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    
+    <span class="c1"># calculate shannon diversity for each one, then add it to the list</span>
+    <span class="n">shannon_diversity</span> <span class="o">=</span> <span class="n">calc_shannon</span><span class="p">(</span><span class="n">populations</span><span class="p">)</span>
+    <span class="n">shannon_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shannon_diversity</span><span class="p">)</span>
+    
+<span class="c1"># plot it out</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">shannon_values</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Shannon diversity by number of species&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Species present&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Shannon diversity index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Alpha-diversity_12_0.png" src="../_images/Alpha-diversity_12_0.png" />
+</div>
+</div>
+<p>One can see from this figure that as the number of species present increases, the Shannon diversity index increases, but it isn’t a purely linear relationship.</p>
+<p>What happens when most of the population is made up by one species? Let’s find out again!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize an empty list</span>
+<span class="n">shannon_values</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># from 0 to 50, make population of species 0 = i</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">populations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">populations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+    
+    
+    <span class="c1"># calculate shannon diversity for each one, then add it to the list</span>
+    <span class="n">shannon_diversity</span> <span class="o">=</span> <span class="n">calc_shannon</span><span class="p">(</span><span class="n">populations</span><span class="p">)</span>
+    <span class="n">shannon_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shannon_diversity</span><span class="p">)</span>
+    
+<span class="c1"># plot it out</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">shannon_values</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Shannon diversity by number of species&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Population of species 0&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Shannon diversity index&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Alpha-diversity_14_0.png" src="../_images/Alpha-diversity_14_0.png" />
+</div>
+</div>
+<p>In this case, we can see that Shannon’s diversity decreases as one species begins to dominate the community. Shannon diversity is primarily used as a metric for richness, but it is affected by how even the community is. Because it does not consider phylogenetic similarity of the taxa, but it does consider the populations of each taxon, Shannon diversity is a non-phylogenetic, quantitative index.</p>
+<p>Lastly, there is a function implemented in scikit-bio to calculate Shannon’s diversity. You can see below that it returns the same value as our implementation of the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skbio.diversity.alpha</span> <span class="kn">import</span> <span class="n">shannon</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scikit-bio: </span><span class="si">{</span><span class="n">shannon</span><span class="p">(</span><span class="n">populations</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Our function: </span><span class="si">{</span><span class="n">calc_shannon</span><span class="p">(</span><span class="n">populations</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scikit-bio: 3.9120230054281455
+Our function: 3.912023005428145
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="faith-s-phylogenetic-diversity">
+<h3>Faith’s phylogenetic diversity<a class="headerlink" href="#faith-s-phylogenetic-diversity" title="Permalink to this headline">¶</a></h3>
+<p>Faith’s phylogenetic diversity is - you guessed it - our first phylogenetic alpha diversity metric! Faith’s PD is a quantitative, phylogenetic richness metric. We won’t write our own function because it would be a little more detailed than we want for this chapter.</p>
+<p>Let’s consider the phylogenetic diversity of two people’s shopping carts.</p>
+<p>To start, we need a phylogenetic tree. Typically you’ll be reading a file, not a string, so don’t worry about having to decipher <code class="docutils literal notranslate"><span class="pre">food_tree_str</span></code>. It’s just a Newick formatted phylogenet tree. If reading a file, you can use <code class="docutils literal notranslate"><span class="pre">TreeNode.read(&quot;path/to/tree&quot;)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skbio</span> <span class="kn">import</span> <span class="n">TreeNode</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">food_tree_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;(((apples,bananas)fruit,(broccoli,spinach)vegetables)produce,</span>
+<span class="s2">                     (chicken,beef)meat,(milk,(orange_juice,apple_juice)juice)beverages,</span>
+<span class="s2">                     (cookies)sweets)items;&quot;&quot;&quot;</span>
+
+<span class="n">food_tree</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">food_tree_str</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">food_tree</span><span class="o">.</span><span class="n">ascii_art</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">food_tree</span><span class="o">.</span><span class="n">postorder</span><span class="p">():</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                              /-apples
+                    /fruit---|
+                   |          \-bananas
+          /produce-|
+         |         |          /-broccoli
+         |          \vegetables
+         |                    \-spinach
+         |
+         |          /-chicken
+         |-meat----|
+-items---|          \-beef
+         |
+         |          /-milk
+         |-beverages
+         |         |          /-orange juice
+         |          \juice---|
+         |                    \-apple juice
+         |
+          \sweets-- /-cookies
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foods</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apples&quot;</span><span class="p">,</span> <span class="s2">&quot;bananas&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;broccoli&quot;</span><span class="p">,</span> <span class="s2">&quot;spinach&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;chicken&quot;</span><span class="p">,</span> <span class="s2">&quot;beef&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;milk&quot;</span><span class="p">,</span> <span class="s2">&quot;orange juice&quot;</span><span class="p">,</span> <span class="s2">&quot;apple juice&quot;</span><span class="p">,</span> 
+         <span class="s2">&quot;cookies&quot;</span><span class="p">]</span>
+
+<span class="n">person_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">0</span><span class="p">]</span>
+<span class="n">person_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> 
+            <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">person_1</span><span class="p">,</span> <span class="n">person_2</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">foods</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>apples</th>
+      <th>bananas</th>
+      <th>broccoli</th>
+      <th>spinach</th>
+      <th>chicken</th>
+      <th>beef</th>
+      <th>milk</th>
+      <th>orange juice</th>
+      <th>apple juice</th>
+      <th>cookies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In the above example, do you expect person 0 or person 1 to have a higher Faith’s PD? They both have the same number of features (or different foods in this case), but which one’s food is more spread out across the phylogenetic tree?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skbio.diversity.alpha</span> <span class="kn">import</span> <span class="n">faith_pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faith_0</span> <span class="o">=</span> <span class="n">faith_pd</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">otu_ids</span><span class="o">=</span><span class="n">foods</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="n">food_tree</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">faith_1</span> <span class="o">=</span> <span class="n">faith_pd</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">otu_ids</span><span class="o">=</span><span class="n">foods</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="n">food_tree</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">features_0</span> <span class="o">=</span> <span class="n">observed_otus</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">features_1</span> <span class="o">=</span> <span class="n">observed_otus</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Person 0 Faith PD = </span><span class="si">{</span><span class="n">faith_0</span><span class="si">}</span><span class="s2">; observed features = </span><span class="si">{</span><span class="n">features_0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Person 1 Faith PD = </span><span class="si">{</span><span class="n">faith_1</span><span class="si">}</span><span class="s2">; observed features = </span><span class="si">{</span><span class="n">features_1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Person 0 Faith PD = 11.0; observed features = 6
+Person 1 Faith PD = 14.0; observed features = 6
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you guess that person</p>
+</div>
 </div>
 <div class="section" id="interactive-example-homework">
 <h2>Interactive example/Homework<a class="headerlink" href="#interactive-example-homework" title="Permalink to this headline">¶</a></h2>
